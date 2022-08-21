@@ -10,11 +10,12 @@ def main():
 
 def Spearman(data):
     ordering = make_ordering(data)
+    print(ordering)
     n = len(ordering)
     rs = 1 - 6/(n * (n**2 - 1)) * sum((P-R)**2 for P,R in ordering)
-    print("" + str(rs))
+    print(f"statistic: {np.abs(rs)}")
     a = 2.33/np.sqrt(n-1)
-    print(a)
+    print(f"critical value: {a}")
 
 def regression(data):
     temperatures = []
